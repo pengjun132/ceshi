@@ -1,1 +1,37 @@
-测试区1
+select u.`id` , u.`email` , stu.`mobile` , stu.`name` , stu.`fdegree` , stu.`grade` , stu.`fgraduate` , stu.`fschool` , stu.`birthday` ,stu.`area`
+
+from hr_users u , hr_student stu
+
+where u.`id` = stu.`user_id`;
+
+
+//地区表
+select `cityname` from hr_student as stu, hr_city as c where stu.`area` = c.`id`   
+
+//注册用户查询
+select u.`id` , u.`email` from hr_student as stu, hr_users as u where stu.`user_id` = u.`id` ;
+
+//学生表
+select stu.`mobile` , stu.`name` , stu.`sex`, stu.`birthday` from hr_student as stu;
+
+//教育表
+select edu.`fdegree` , edu.`grade` , edu.`fgraduate`, edu.`fschool` , edu.`fmajor` from hr_student as stu , hr_student_eduexp as edu;   # max 
+
+
+
+一，获取 学生基本字段（学生表和用户表关联）  array 
+
+二，获取userid 遍历数组 获取最大教育经历
+
+三，将city转换成键值对的形式，获取cityid 遍历数组得到cityname
+
+
+
+
+
+
+
+
+
+
+
